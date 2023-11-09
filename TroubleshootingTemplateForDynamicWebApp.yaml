@@ -83,7 +83,7 @@ Parameters:
     Type: String
     MinLength: '9'
     MaxLength: '18'
-    Default: 72.133.248.91/32
+    Default: 72.xxx.xxx.xx/32
     AllowedPattern: '(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})'
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
 
@@ -104,7 +104,7 @@ Parameters:
 
   DatabaseUser:
     Description: Username for MySQL database access
-    Default: azeezs
+    Default: craaappuser
     NoEcho: 'true'
     Type: String
     MinLength: '1'
@@ -114,7 +114,7 @@ Parameters:
 
   DatabasePassword:
     Description: Password for MySQL database access
-    Default: azeezs123
+    Default: craaappuser123
     NoEcho: 'true'
     Type: String
     MinLength: '8'
