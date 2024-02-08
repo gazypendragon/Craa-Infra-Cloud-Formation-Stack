@@ -27,19 +27,19 @@ Metadata:
         Parameters: 
           - SSHLocation
 
-#RDS Label      
-      - 
-        Label: 
-          default: "Databae Parameters"
-        Parameters:
-          - DatabaseInstanceIdentifier
-          - DatabaseName
-          - DatabaseUser
-          - DatabasePassword
-          - DatabaseBackupRetentionPeriod
-          - DatabaseAllocatedStorage
-          - DatabaseInstanceClass
-          - MultiAZDatabase
+# #RDS Label      
+#       - 
+#         Label: 
+#           default: "Databae Parameters"
+#         Parameters:
+#           - DatabaseInstanceIdentifier
+#           - DatabaseName
+#           - DatabaseUser
+#           - DatabasePassword
+#           - DatabaseBackupRetentionPeriod
+#           - DatabaseAllocatedStorage
+#           - DatabaseInstanceClass
+#           - MultiAZDatabase
 
 Parameters:
 #VPC Parameters
@@ -83,111 +83,111 @@ Parameters:
     Type: String
     MinLength: '9'
     MaxLength: '18'
-    Default: 72.xxx.xxx.xx/32
+    Default: 72.133.248.91/32
     AllowedPattern: '(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})'
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
 
-#RDS Parameters
-  DatabaseInstanceIdentifier:
-    Description: RDS instance identifier
-    Default: dev-rds-db
-    Type: String
+# #RDS Parameters
+#   DatabaseInstanceIdentifier:
+#     Description: RDS instance identifier
+#     Default: dev-rds-db
+#     Type: String
 
-  DatabaseName:
-    Description: MySQL database name
-    Default: applicationdb
-    Type: String
-    MinLength: '1'
-    MaxLength: '64'
-    AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
-    ConstraintDescription: must begin with a letter and contain only alphanumeric characters.
+#   DatabaseName:
+#     Description: MySQL database name
+#     Default: applicationdb
+#     Type: String
+#     MinLength: '1'
+#     MaxLength: '64'
+#     AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
+#     ConstraintDescription: must begin with a letter and contain only alphanumeric characters.
 
-  DatabaseUser:
-    Description: Username for MySQL database access
-    Default: craaappuser
-    NoEcho: 'true'
-    Type: String
-    MinLength: '1'
-    MaxLength: '16'
-    AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
-    ConstraintDescription: must begin with a letter and contain only alphanumeric characters.
+#   DatabaseUser:
+#     Description: Username for MySQL database access
+#     Default: craaappuser
+#     NoEcho: 'true'
+#     Type: String
+#     MinLength: '1'
+#     MaxLength: '16'
+#     AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
+#     ConstraintDescription: must begin with a letter and contain only alphanumeric characters.
 
-  DatabasePassword:
-    Description: Password for MySQL database access
-    Default: craaappuser123
-    NoEcho: 'true'
-    Type: String
-    MinLength: '8'
-    MaxLength: '41'
-    AllowedPattern: '[a-zA-Z0-9]*'
-    ConstraintDescription: must contain only alphanumeric characters.
+#   DatabasePassword:
+#     Description: Password for MySQL database access
+#     Default: craaappuser123
+#     NoEcho: 'true'
+#     Type: String
+#     MinLength: '8'
+#     MaxLength: '41'
+#     AllowedPattern: '[a-zA-Z0-9]*'
+#     ConstraintDescription: must contain only alphanumeric characters.
 
-  DatabaseBackupRetentionPeriod:
-    ConstraintDescription: Database backup retention period must be between 1 and 35 days
-    Default: '0'
-    Description: The number of days for which automatic DB snapshots are retained
-    MaxValue: '8'
-    MinValue: '0'
-    Type: Number
+#   DatabaseBackupRetentionPeriod:
+#     ConstraintDescription: Database backup retention period must be between 1 and 35 days
+#     Default: '0'
+#     Description: The number of days for which automatic DB snapshots are retained
+#     MaxValue: '8'
+#     MinValue: '0'
+#     Type: Number
 
-  DatabaseAllocatedStorage:
-    Description: The size of the database (Gb)
-    Default: '5'
-    Type: Number
-    MinValue: '5'
-    MaxValue: '1024'
-    ConstraintDescription: must be between 5 and 1024Gb.
+#   DatabaseAllocatedStorage:
+#     Description: The size of the database (Gb)
+#     Default: '5'
+#     Type: Number
+#     MinValue: '5'
+#     MaxValue: '1024'
+#     ConstraintDescription: must be between 5 and 1024Gb.
 
-  DatabaseInstanceClass:
-    Description: The database instance type
-    Type: String
-    Default: db.t2.micro
-    AllowedValues:
-      - db.t1.micro
-      - db.m1.small
-      - db.m1.medium
-      - db.m1.large
-      - db.m1.xlarge
-      - db.m2.xlarge
-      - db.m2.2xlarge
-      - db.m2.4xlarge
-      - db.m3.medium
-      - db.m3.large
-      - db.m3.xlarge
-      - db.m3.2xlarge
-      - db.m4.large
-      - db.m4.xlarge
-      - db.m4.2xlarge
-      - db.m4.4xlarge
-      - db.m4.10xlarge
-      - db.r3.large
-      - db.r3.xlarge
-      - db.r3.2xlarge
-      - db.r3.4xlarge
-      - db.r3.8xlarge
-      - db.m2.xlarge
-      - db.m2.2xlarge
-      - db.m2.4xlarge
-      - db.cr1.8xlarge
-      - db.t2.micro
-      - db.t2.small
-      - db.t2.medium
-      - db.t2.large
-    ConstraintDescription: must select a valid database instance type.
+#   DatabaseInstanceClass:
+#     Description: The database instance type
+#     Type: String
+#     Default: db.t2.micro
+#     AllowedValues:
+#       - db.t1.micro
+#       - db.m1.small
+#       - db.m1.medium
+#       - db.m1.large
+#       - db.m1.xlarge
+#       - db.m2.xlarge
+#       - db.m2.2xlarge
+#       - db.m2.4xlarge
+#       - db.m3.medium
+#       - db.m3.large
+#       - db.m3.xlarge
+#       - db.m3.2xlarge
+#       - db.m4.large
+#       - db.m4.xlarge
+#       - db.m4.2xlarge
+#       - db.m4.4xlarge
+#       - db.m4.10xlarge
+#       - db.r3.large
+#       - db.r3.xlarge
+#       - db.r3.2xlarge
+#       - db.r3.4xlarge
+#       - db.r3.8xlarge
+#       - db.m2.xlarge
+#       - db.m2.2xlarge
+#       - db.m2.4xlarge
+#       - db.cr1.8xlarge
+#       - db.t2.micro
+#       - db.t2.small
+#       - db.t2.medium
+#       - db.t2.large
+#     ConstraintDescription: must select a valid database instance type.
 
-  MultiAZDatabase:
-    Description: Create a Multi-AZ MySQL Amazon RDS database instance
-    Default: 'false'
-    Type: String
-    AllowedValues:
-      - 'true'
-      - 'false'
-    ConstraintDescription: must be either true or false.
+#   MultiAZDatabase:
+#     Description: Create a Multi-AZ MySQL Amazon RDS database instance
+#     Default: 'false'
+#     Type: String
+#     AllowedValues:
+#       - 'true'
+#       - 'false'
+#     ConstraintDescription: must be either true or false.
 
-Conditions:
-  CreateReadReplica: !Equals 
-    - !Ref MultiAZDatabase
-    - 'true'
+# Conditions:
+#   CreateReadReplica: !Equals 
+#     - !Ref MultiAZDatabase
+#     - 'true'
 
 Resources:
 # VPC Resources
@@ -403,20 +403,20 @@ Resources:
         - Key: Name
           Value: SSH Security Group
 
-  DataBaseSecurityGroup:
-    Type: 'AWS::EC2::SecurityGroup'
-    Properties:
-      GroupDescription: Database Security Group
-      GroupName: Database Security Group
-      SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: '3306'
-          ToPort: '3306'
-          SourceSecurityGroupId: !Ref WebServerSecurityGroup
-      VpcId: !Ref VPC
-      Tags:
-        - Key: Name
-          Value: Database Security Group
+  # DataBaseSecurityGroup:
+  #   Type: 'AWS::EC2::SecurityGroup'
+  #   Properties:
+  #     GroupDescription: Database Security Group
+  #     GroupName: Database Security Group
+  #     SecurityGroupIngress:
+  #       - IpProtocol: tcp
+  #         FromPort: '3306'
+  #         ToPort: '3306'
+  #         SourceSecurityGroupId: !Ref WebServerSecurityGroup
+  #     VpcId: !Ref VPC
+  #     Tags:
+  #       - Key: Name
+  #         Value: Database Security Group
 
   ALBSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
@@ -464,35 +464,35 @@ Resources:
         - Key: Name
           Value: Webserver Security Group
  
-#RDS Resources
-  DatabaseSubnetGroup:
-    Type: 'AWS::RDS::DBSubnetGroup'
-    Properties:
-      DBSubnetGroupDescription: Subnet Group for RDS Database
-      DBSubnetGroupName: database subnets
-      SubnetIds: 
-        - !Ref PrivateDataSubnetAZ1
-        - !Ref PrivateDataSubnetAZ2
-      Tags:
-        - Key: Name
-          Value: database subnets
+# #RDS Resources
+#   DatabaseSubnetGroup:
+#     Type: 'AWS::RDS::DBSubnetGroup'
+#     Properties:
+#       DBSubnetGroupDescription: Subnet Group for RDS Database
+#       DBSubnetGroupName: database subnets
+#       SubnetIds: 
+#         - !Ref PrivateDataSubnetAZ1
+#         - !Ref PrivateDataSubnetAZ2
+#       Tags:
+#         - Key: Name
+#           Value: database subnets
 
-  DatabaseInstance:
-    Type: 'AWS::RDS::DBInstance'
-    Properties:
-      DBInstanceIdentifier: !Ref DatabaseInstanceIdentifier
-      AvailabilityZone: !Select [ 0, !GetAZs  '' ]
-      BackupRetentionPeriod: !Ref DatabaseBackupRetentionPeriod
-      Engine: MySQL
-      EngineVersion: 8.0.34
-      DBName: !Ref DatabaseName
-      MultiAZ: !Ref MultiAZDatabase
-      MasterUsername: !Ref DatabaseUser
-      MasterUserPassword: !Ref DatabasePassword
-      DBInstanceClass: !Ref DatabaseInstanceClass
-      DBSubnetGroupName: !Ref DatabaseSubnetGroup
-      AllocatedStorage: !Ref DatabaseAllocatedStorage
-      VPCSecurityGroups:
-        - !GetAtt 
-          - DataBaseSecurityGroup
-          - GroupId
+#   DatabaseInstance:
+#     Type: 'AWS::RDS::DBInstance'
+#     Properties:
+#       DBInstanceIdentifier: !Ref DatabaseInstanceIdentifier
+#       AvailabilityZone: !Select [ 0, !GetAZs  '' ]
+#       BackupRetentionPeriod: !Ref DatabaseBackupRetentionPeriod
+#       Engine: MySQL
+#       EngineVersion: 8.0.34
+#       DBName: !Ref DatabaseName
+#       MultiAZ: !Ref MultiAZDatabase
+#       MasterUsername: !Ref DatabaseUser
+#       MasterUserPassword: !Ref DatabasePassword
+#       DBInstanceClass: !Ref DatabaseInstanceClass
+#       DBSubnetGroupName: !Ref DatabaseSubnetGroup
+#       AllocatedStorage: !Ref DatabaseAllocatedStorage
+#       VPCSecurityGroups:
+#         - !GetAtt 
+#           - DataBaseSecurityGroup
+#           - GroupId
